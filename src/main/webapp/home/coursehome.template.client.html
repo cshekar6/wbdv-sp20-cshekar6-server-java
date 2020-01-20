@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <meta name="author" content="Chandu">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" rel="stylesheet"/>
+    <link href="coursehome.style.client.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"/>
+</head>
+<body>
+<nav class="navbar navbar-dark bg-primary">
+    <div class="container-fluid">
+
+        <div class="col-md-1 col-sm-1 col-1" float="left">
+            <button class="navbar-toggler wbdv-field wbdv-hamburger " type="button" data-toggle="collapse" data-target="#navbarContent"
+                    aria-controls="navbarContent" aria-expanded="true" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span></button>
+        </div>
+
+        <div class="col-md-2 d-none d-lg-block">
+            <label class="navbar-brand wbdv-label wbdv-course-manager">Course Manager</label>
+        </div>
+
+        <div class="col-md-7 col-sm-8 col-7">
+            <input class="form-control wbdv-field wbdv-new-course wbdv-course" id="courseTitle" placeholder="New Course Title">
+        </div>
+
+        <div class="col-md-2 col-sm-3 col-3">
+            <button class="btn-remove" >
+                <i class="fas fa-2x fa-plus-circle"></i></button>
+        </div>
+
+    </div>
+</nav>
+
+<div class="table-active ">
+    <div class="container">
+        <table id="courseTable" class="table table-striped ">
+            <thead>
+            <tr>
+                <th>Title</th>
+                <th scope="col" class="d-none d-sm-table-cell">
+                    <select id="ownSelect" class="form-control">
+                        <option>Owned By</option>
+                    </select>
+                </th>
+                <th scope="col" class="d-none d-sm-table-cell">Last modified by me</th>
+                <th>
+                    <!-- https://www.w3schools.com/icons/tryit.asp?filename=tryicons_google-view_module -->
+                    <i class="material-icons pt-1">view_module</i>
+                </th>
+                <th>
+                    <!-- https://www.w3schools.com/icons/tryit.asp?filename=tryicons_google-sort_by_alpha -->
+                    <i class="material-icons pt-1">sort_by_alpha</i>
+                </th>
+            </tr>
+            </thead>
+        </table>
+    </div>
+</div>
+</div>
+<div class="floating-insert">
+    <button class="btn-remove bottomRight" >
+        <i class="fas fa-2x fa-plus-circle"></i>
+    </button>
+</div>
+
+</body>
+</html>
