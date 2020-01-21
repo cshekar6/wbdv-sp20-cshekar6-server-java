@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Course Editor</title>
+    <meta content="Chandu" name="author">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"
+          rel="stylesheet"/>
+    <link href="courseeditor.style.client.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          rel="stylesheet"/>
+</head>
+<body>
+
+<!-- Top Nav Bar -->
+
+<nav class="navbar navbar-light bg-dark fixed-top custom-nav-vertical-height">
+    <div class="container-fluid">
+        <div class="row w-100">
+            <div class="col-3">
+                <div class="row">
+                        <span class="col-3 wbdv-course-editor wbdv-close">
+                            <a href="../index.html">
+                                <i class="fa fa-times fa-2x custom-cross-icon"></i>
+                            </a>
+                        </span>
+                    <span class="navbar-brand text-white text-bold wbdv-course-title">
+                            CS5610-Webdev
+                    </span>
+                </div>
+            </div>
+            <div class="col-8">
+                <nav class="nav-lessontab wbdv-page-tab">
+                    <div class="nav nav-tabs border-bottom-0" id="nav-top-bar-tab">
+                        <a aria-controls="nav-lesson1" aria-selected="true"
+                           class="nav-item nav-link active" data-toggle="tab"
+                           href="#nav-lessontab1" id="nav-lesson1-tab">Build</a>
+                        <a aria-controls="nav-lesson2" aria-selected="false"
+                           class="nav-item nav-link" data-toggle="tab"
+                           href="#nav-lessontab2" id="nav-lesson2-tab">Pages</a>
+                        <a aria-controls="nav-lesson3" aria-selected="false"
+                           class="nav-item nav-link" data-toggle="tab"
+                           href="#nav-lessontab3" id="nav-lesson3-tab">Theme</a>
+                        <a aria-controls="nav-lesson4" aria-selected="false"
+                           class="nav-item nav-link" data-toggle="tab"
+                           href="#nav-lessontab4" id="nav-lesson4-tab">Store</a>
+                        <a aria-controls="nav-lesson5" aria-selected="false"
+                           class="nav-item nav-link" data-toggle="tab"
+                           href="#nav-lessontab5" id="nav-lesson5-tab">Apps</a>
+                        <a aria-controls="nav-lesson6" aria-selected="false"
+                           class="nav-item nav-link" data-toggle="tab"
+                           href="#nav-lessontab6" id="nav-lesson6-tab">Settings</a>
+                    </div>
+                </nav>
+            </div>
+            <div class="col-1 ">
+                <a class="wbdv-new-page-btn" href="#">
+                    <i class="fa fa-plus fa-2x custom-cross-icon"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- Module -->
+
+<div class="container-fluid">
+    <div class="row toppad">
+        <div class="col-3 dark-background">
+            <ul class="list-group wbdv-module-list">
+                <li class="list-group-item list-group-item-dark wbdv-module-item">Module 1
+                    <button aria-label="Close" class="close wbdv-module-item-delete-btn" type="button">
+                        <span aria-hidden="true">&times</span>
+                    </button>
+                </li>
+                <li class="list-group-item active list-group-item-dark wbdv-module-item-title">Module 2
+                    <button aria-label="Close" class="close wbdv-module-item-delete-btn" type="button">
+                        <span aria-hidden="true">&times</span>
+                    </button>
+                </li>
+                <li class="list-group-item list-group-item-dark">Module 3
+                    <button aria-label="Close" class="close wbdv-module-item-delete-btn" type="button">
+                        <span aria-hidden="true">&times</span>
+                    </button>
+                </li>
+                <li class="list-group-item list-group-item-dark">Module 4
+                    <button aria-label="Close" class="close wbdv-module-item-delete-btn" type="button">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </li>
+                <li class="list-group-item list-group-item-dark">Module 5
+                    <button aria-label="Close" class="close wbdv-module-item-delete-btn" type="button">
+                        <span aria-hidden="true">&times</span>
+                    </button>
+                </li>
+                <li class="list-group-item list-group-item-dark">Module 6
+                    <button aria-label="Close" class="close wbdv-module-item-delete-btn" type="button">
+                        <span aria-hidden="true">&times</span>
+                    </button>
+                </li>
+            </ul>
+            <div class="topic-add">
+                <button class="btn topic-adder-btn wbdv-module-item-add-btn">
+                    <i class="text-white fas fa-plus"></i></button>
+            </div>
+        </div>
+
+        <!-- Topic and classes -->
+<!--        <div class="col-7">
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        Lesson 1
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="active nav-link" href="#">
+                        Lesson 2
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        Lesson 3
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <div class="topic-add">
+                        <button class="btn topic-adder-btn">
+                            <i class="fas fa-plus"></i></button>
+                    </div>
+                </li>
+            </ul>-->
+        <div class="row col-7">
+            <ul class="nav nav-pills wbdv-topic-pill-list">
+                <li class="nav-item wbdv-topic-pill">
+                    <a class="nav-link" href="#">
+                        Topic 1
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="active nav-link" href="#">
+                        Topic 2
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        Topic 3
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        Topic 4
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <div class="topic-add wbdv-topic-add-btn">
+                        <button class="btn topic-adder-btn">
+                            <i class="fas fa-plus"></i></button>
+                    </div>
+                </li>
+            </ul>
+
+            <!-- Heading Widget -->
+
+            <div class="tab-content">
+                <div aria-labelledby="mod1-t1" class="tab-pane fade show active"
+                     id="pills-mod1-t1">
+                    <div class="container-fluid">
+                        <div class="row mb-3">
+                            <div class="offset-9">
+                                <button class="btn btn-success mr-2">Save</button>
+                                <span class="mr-2">Preview</span>
+                                <label class="switch">
+                                    <input type="checkbox">
+                                    <span class="slider round"></span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="container-fluid custom-widgets">
+                            <div class="row">
+                                <div class="col-7">
+                                    <h1>Heading widget</h1>
+                                </div>
+
+                                <div class="col-5 d-none d-md-block">
+                                    <button class="btn btn-warning">
+                                        <i class="custom-arrow fa fa-arrow-up"></i>
+                                    </button>
+                                    <button class="btn btn-warning ">
+                                        <i class="custom-arrow fa fa-arrow-down"></i>
+                                    </button>
+                                    <select class="custom-select w-50">
+                                        <option>Heading</option>
+                                        <option>Paragraph</option>
+                                        <option>List</option>
+                                        <option>Image</option>
+                                        <option>Link</option>
+                                        <option></option>
+                                    </select>
+                                    <button class="btn btn-danger ">
+                                        <i class="fa fa-times-circle"></i>
+                                    </button>
+                                </div>
+
+                                <div class="container-fluid">
+                                    <input class="form-control mb-2" placeholder="Heading Text"
+                                           type="text">
+                                    <select class="custom-select mb-2">
+                                        <option selected>Heading1</option>
+                                        <option>Heading2</option>
+                                        <option>Heading3</option>
+                                    </select>
+                                    <input class="form-control" placeholder="Widget name"
+                                           type="text">
+                                </div>
+
+                            </div>
+
+                            <div class="container-fluid">
+                                <div class="row mb-2">
+                                    <span class="text-black preview-d">Preview</span>
+                                </div>
+                                <div class="row mb-2">
+                                    <h2>Heading Text</h2>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- button to add widget -->
+                        <div class="add-widget-button">
+                            <button class="btn btn-danger">
+                                <i class="fa fa-plus-circle"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+</div>
+</body>
+</html>
