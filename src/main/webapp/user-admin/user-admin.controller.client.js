@@ -22,6 +22,7 @@
 
         $createBtn1.click(createUser);
         $updateBtn.click(updateUser);
+        $searchBtn.click(filterUsers);
     }
 
     function createUser() {
@@ -30,13 +31,7 @@
         const firstname = $firstNameFld.val();
         const lastname = $lastNameFld.val();
         const role = $roleFld.val();
-
-        $usernameFld.val("");
-        $passwordFld.val("");
-        $firstNameFld.val("");
-        $lastNameFld.val("");
-        $roleFld.val("FACULTY");
-
+        clearAll();
         console.log(username);
 
         userService.createUser( {username: username,
@@ -45,8 +40,34 @@
                 userService.findAllUsers().then(renderUsers);
             })
     }
-    function findAllUsers() {}
-    function findUserById() {}
+    function findAllUsers() {
+        return userService.findAllUsers().then(renderUsers);
+    }
+
+    function filterUsers() {
+        const username = $usernameFld.val();
+        const firstname = $firstNameFld.val();
+        const lastname = $lastNameFld.val();
+        const role = $roleFld.val();
+        if (!username) {
+            clearAll();
+            return findAllUsers();
+        }
+        return userService.findAllUsers().then(data => {
+            clearAll();
+            const result = data.filter((value) => value.username === username &&
+                                                  (! firstname || value.firstname === firstname)
+            && (!lastname || value.lastname === lastname)
+            && (!role || value.role === role));
+            renderUsers(result);
+        });
+
+    }
+
+    function findUserById(userId) {
+        userService.findUserById(userId).then(data => {
+            renderUser(data);})
+    }
 
     function deleteUser() {
         var button;
@@ -98,11 +119,7 @@
         const lastname = $lastNameFld.val();
         const role = $roleFld.val();
 
-        $usernameFld.val("");
-        $passwordFld.val("");
-        $firstNameFld.val("");
-        $lastNameFld.val("");
-        $roleFld.val("FACULTY");
+        clearAll();
 
         userService.updateUser(currentUserId, {username: username,
         password:password, firstname:firstname,lastname:lastname,role:role})
@@ -110,7 +127,23 @@
                 userService.findAllUsers().then(renderUsers);
             })
     }
-    function renderUser(user) { }
+    function renderUser(user) {
+        $tbody.empty();
+        var tr;
+            tr = $('<tr class="wbdv-template table-warning wbdv-user"/>');
+            tr.append("<td class='wbdv-username text-danger'>" + user.username + '</td>');
+            tr.append("<td class='wbdv-password text-danger '>" + user.password + "</td>");
+            tr.append("<td class='wbdv-first-name text-danger'>" + user.firstname + "</td>");
+            tr.append("<td class='wbdv-last-name text-danger'>" + user.lastname + "</td>");
+            tr.append("<td class='wbdv-role text-danger'>" + user.role + "</td>");
+            tr.append("<td class='wbdv-actions text-danger'><span class='float-right'>"
+                      + "<i class='fa-2x fa fa-times wbdv-remove danger'></i>"
+                      + "<i class='pl-3 fa-2x fa fa-pencil wbdv-edit primary'></i></span></td>");
+            $tbody.append(tr);
+
+        $('.wbdv-remove').click(deleteUser);
+        $('.wbdv-edit').click(selectUser);
+    }
 
     function renderUsers(users) {
         $tbody.empty();
@@ -134,5 +167,12 @@
         $('.wbdv-edit').click(function(){
             selectUser();
         });
+    }
+    function clearAll() {
+        $usernameFld.val("");
+        $passwordFld.val("");
+        $firstNameFld.val("");
+        $lastNameFld.val("");
+        $roleFld.val("FACULTY");
     }
 })();
