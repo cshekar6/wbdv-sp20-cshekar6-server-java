@@ -31,6 +31,9 @@
         const firstname = $firstNameFld.val();
         const lastname = $lastNameFld.val();
         const role = $roleFld.val();
+        if(!username || !password || !firstname || !lastname || !role) {
+            return;
+        }
         clearAll();
         console.log(username);
 

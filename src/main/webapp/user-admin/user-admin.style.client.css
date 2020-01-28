@@ -2,3 +2,20 @@
     display: none;
 }
 .hidetext{ -webkit-text-security: disc; }
+
+.errorTxt{
+    border: 1px solid red;
+    min-height: 20px;
+}
+
+#error1 { position:absolute;
+    left: 230px;
+    display:none;
+    color:#555;
+    border-radius:5px;
+    font-family:Tahoma,Geneva,Arial,sans-serif;font-size:.8em;
+    padding:5px 5px 5px 30px;
+    margin:-4px 0px 0px 0px;
+    background:#ffecec url('http://www.html5accessibility.com/images/cross.png') no-repeat 10px 50%;
+    border:2px solid #f5aca6;
+}
