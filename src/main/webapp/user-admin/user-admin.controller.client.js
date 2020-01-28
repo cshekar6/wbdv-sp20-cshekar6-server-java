@@ -55,7 +55,7 @@
         }
         return userService.findAllUsers().then(data => {
             clearAll();
-            const result = data.filter((value) => value.username === username &&
+            const result = data.filter((value) => value.username.includes(username) &&
                                                   (! firstname || value.firstname === firstname)
             && (!lastname || value.lastname === lastname)
             && (!role || value.role === role));
@@ -104,6 +104,7 @@
         $('#usernameFld').val(curr_username);
         var curr_password = current_tr.find('.wbdv-password').text();
         $('#passwordFld').val(curr_password);
+        $('#passwordFld').prop("readonly",true);
         var curr_first_name = current_tr.find('.wbdv-first-name').text();
         $('#firstNameFld').val(curr_first_name);
         var curr_last_name = current_tr.find('.wbdv-last-name').text();
@@ -151,7 +152,7 @@
         for (let i = 0; i < users.length; i++) {
             tr = $('<tr class="wbdv-template table-warning wbdv-user"/>');
             tr.append("<td class='wbdv-username text-danger'>" + users[i].username + '</td>');
-            tr.append("<td class='wbdv-password text-danger '>" + users[i].password + "</td>");
+            tr.append("<td class='wbdv-password text-danger hidetext'>" + users[i].password + "</td>");
             tr.append("<td class='wbdv-first-name text-danger'>" + users[i].firstname + "</td>");
             tr.append("<td class='wbdv-last-name text-danger'>" + users[i].lastname + "</td>");
             tr.append("<td class='wbdv-role text-danger'>" + users[i].role + "</td>");
@@ -173,6 +174,7 @@
         $passwordFld.val("");
         $firstNameFld.val("");
         $lastNameFld.val("");
-        $roleFld.val("FACULTY");
+        $roleFld.val("");
+        $('#passwordFld').prop("readonly",false);
     }
 })();

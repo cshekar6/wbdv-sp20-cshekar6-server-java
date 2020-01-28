@@ -1,3 +1,4 @@
 .wbdv-hidden{
     display: none;
 }
+.hidetext{ -webkit-text-security: disc; }
